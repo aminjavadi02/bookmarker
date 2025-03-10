@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('url')->unique();
+            $table->string('url');
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->softDeletes();

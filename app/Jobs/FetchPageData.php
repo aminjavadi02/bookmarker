@@ -20,6 +20,9 @@ class FetchPageData implements ShouldQueue
      * Create a new job instance.
      */
     protected $bookmark;
+    public $tries = 3;
+    public $backoff = [10, 30, 60];
+
     public function __construct(bookmarksModel $bookmark)
     {
         $this->bookmark = $bookmark;
@@ -38,12 +41,13 @@ class FetchPageData implements ShouldQueue
             preg_match('/<title>(.*?)<\/title>/', $html, $title);
             preg_match('/<meta name="description" content="(.*?)"/', $html, $description);
 
-            $this->bookmark->update([
+            $this->bookmark->update(attributes: [
                 'title' => $title[1] ?? null,
                 'description' => $description[1] ?? null
             ]);
         } catch (\Exception $e) {
             Log::error("Failed to fetch metadata: " . $e->getMessage());
+            throw $e;
         }
 
     }

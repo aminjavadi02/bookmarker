@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "ece5f970-acda-40b0-9fd7-f0a03676f366",
+		"name": "bookmarker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25681602"
+	},
+	"item": [
+		{
+			"name": "getall",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFtaW4gamF2YWRpIiwiaWF0IjoxOTE2MjM5MDIyfQ.Xlv3girg9OdH97u8hTFXsJg_D5bed4NpW8vSHDNV8zY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/bookmarks",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bookmarks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFtaW4gamF2YWRpIiwiaWF0IjoxOTE2MjM5MDIyfQ.Xlv3girg9OdH97u8hTFXsJg_D5bed4NpW8vSHDNV8zY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"https://www.google.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/bookmarks",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bookmarks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFtaW4gamF2YWRpIiwiaWF0IjoxOTE2MjM5MDIyfQ.Xlv3girg9OdH97u8hTFXsJg_D5bed4NpW8vSHDNV8zY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"https://www.laravel.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/bookmarks/dc55c081-eccf-4498-bfb8-6ff808763002",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bookmarks",
+						"dc55c081-eccf-4498-bfb8-6ff808763002"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

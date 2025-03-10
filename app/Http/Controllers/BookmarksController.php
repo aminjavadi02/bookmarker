@@ -16,7 +16,7 @@ class BookmarksController extends Controller
      */
     public function index()
     {
-        return bookmarksModel::get()->all();
+        return bookmarksModel::whereNull('deleted_at')->get();
     }
 
     /**
