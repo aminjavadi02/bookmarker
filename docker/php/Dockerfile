@@ -2,7 +2,7 @@ FROM php:8.2-fpm
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git curl zip unzip libpq-dev libonig-dev \
+    git curl zip unzip libpq-dev libonig-dev netcat-openbsd \
     && docker-php-ext-install pdo pdo_pgsql mbstring
 
 # Install Composer
@@ -24,6 +24,11 @@ RUN composer install --no-interaction --optimize-autoloader \
     && php artisan config:clear \
     && php artisan storage:link || true
 
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 USER www-data
+
+ENTRYPOINT [ "entrypoint.sh" ]
 
 CMD ["php-fpm"]
