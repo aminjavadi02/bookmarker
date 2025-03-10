@@ -48,3 +48,9 @@ hardcoded JWT middleware named: `ApiTokenAuth`, that is set over the whole api's
 - Ensure you have Docker installed before running the project.
 - Copy `.env.example` into `.env`.
 - Endpoints are defined in a postman collection in project root: `bookmarker.postman_collection.json`
+
+
+## Possible Problems:
+- if it said entrypoint.sh is not executable, make it executable: `sudo chmod +x entrypoint.sh`
+
+- if it said storage permission denied cant log, do these: `sudo chmod -R 775 storage`, `sudo chown -R $USER:www-data storage`.
