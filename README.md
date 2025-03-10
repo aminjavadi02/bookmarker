@@ -5,8 +5,8 @@
 ### Clone the Project
 First, clone the repository to your local machine:
 ```sh
-git clone "<repository_address>"
-cd <project_name>
+git clone https://github.com/aminjavadi02/bookmarker.git
+cd bookmarker
 ```
 
 ### Set up env
